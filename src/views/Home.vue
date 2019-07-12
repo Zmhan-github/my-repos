@@ -106,7 +106,6 @@
           autocomplete="off"
           required
           spellcheck="false"
-          maxlength="30"
         >
         <label for="DOB" class="label">
           <span class="label__text">
@@ -132,7 +131,6 @@
           autocomplete="off"
           required
           spellcheck="false"
-          maxlength="30"
         >
         <label for="phone" class="label">
           <span class="label__text">
@@ -142,15 +140,28 @@
       </fieldset>
 
       <fieldset class="form-group">
+        <svg
+          class="Icon Icon-disabled"
+          width="24"
+          height="24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"
+            fill="#D4D4D4"
+          />
+        </svg>
         <input
           id="email"
-          type="email"
+          type="text"
           name="email"
           class="input"
           autocomplete="off"
           required
           spellcheck="false"
-          maxlength="30"
+          value="regeon-93@inbox.ru"
+          disabled
         >
         <label for="email" class="label">
           <span class="label__text">
@@ -289,6 +300,24 @@ export default {
   color: #3ec25f;
   font-size: 12px;
 }
+
+.form-group > .input:disabled {
+  color: #bcbcbc;
+  background-color: #fff;
+}
+
+.input:disabled + .label .label__text {
+  transform: translateY(-170%);
+  font-size: 12px;
+}
+
+// Icon
+.Icon {
+  position: absolute;
+  right: 0;
+  bottom: 9px;
+}
+
 // For Radio
 .wrapper-radio + .label .label__text,
 .wrapper-radio + .label .label__text {
@@ -566,6 +595,7 @@ export default {
   line-height: 22px;
   font-size: 14px;
   color: #bcbcbc;
+  text-align: justify;
 }
 .checkbox__checkmark {
   box-sizing: border-box;
@@ -810,7 +840,8 @@ export default {
 }
 .checkbox--material__checkmark {
   width: 18px;
-  height: 18px;
+  height: 40px;
+  float: left;
 }
 .checkbox--material__checkmark:before {
   border-radius: 2px;
